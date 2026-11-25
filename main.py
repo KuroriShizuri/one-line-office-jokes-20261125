@@ -80,7 +80,7 @@ def main(argv):
         print(err, file=sys.stderr)
         return usage()
     entry = Entry(CONFIG)
-    names = {name for name, _value in opts}
+    names = {name.lstrip("-") for name, _value in opts}
     if "help" in names:
         return usage()
     if "self-test" in names:
